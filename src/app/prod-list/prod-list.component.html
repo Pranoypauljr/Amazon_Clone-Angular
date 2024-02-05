@@ -1,0 +1,11 @@
+<div class="product-list">
+    <div *ngFor="let product of prod_name_list; let i = index" class="product-tile" (click)="showProduct(i)">
+      <img [src]="prod_image_list[i]" alt="{{ prod_name_list[i] }}" class="product-image">
+      <h3>{{ prod_name_list[i] }}</h3>
+      <p class="product-price">{{ prod_price_list[i] | currency: 'USD' }}</p>
+      <button class="add-to-cart-button">Add to Cart</button>
+      <div class="product-description" *ngIf="selectedProdIndex === i">
+        <p>{{prod_desc_list[i]}}</p>
+      </div>
+    </div>
+  </div>
